@@ -1,4 +1,4 @@
-# ![pystates](resource/logo.svg)
+# ![pystates](resources/logo.svg)
 
 # pystates
 State aware system implemented in python
