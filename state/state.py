@@ -5,9 +5,10 @@ class State:
     """Represents a State"""
 
     name = None  # type: str
-    transitions = []  # type: List[int]
+    transitions = []  # type: List[Transition]
 
-    def __init__(self):
+    def __init__(self, name):
+        self.name = name
         pass
 
     def do_transition(self, context):
@@ -16,6 +17,8 @@ class State:
 
     def add_transition(self, transition):
         # type: (Transition) -> None
+        """add a transition to transitions of this state"""
+        assert isinstance(transition, Transition)
         self.transitions.append(transition)
 
 
