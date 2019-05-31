@@ -128,6 +128,7 @@ class Predicate:
 
 
 if __name__ == '__main__':
+    # todo move this to a unit test
     # hello = 'Hallo'
     # one = 1
     # bello = 'Bello'
@@ -153,6 +154,8 @@ if __name__ == '__main__':
     #
     # false_and_predicate = false_number_predicate._and(false_number_predicate)
     # print(false_and_predicate.test())
+
+    # todo move this to a unit test
 
     start_state = State('start')
     end_state = State('end')
