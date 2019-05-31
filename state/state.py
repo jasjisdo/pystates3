@@ -30,13 +30,15 @@ class State:
     """Represents a State"""
 
     name = None  # type: str
-    transitions = []  # type: List[Transition]
+    transitions = None  # type: List[Transition]
 
     def __init__(self, name, transitions=None):
         # type: (str, List[Transition]) -> None
         self.name = name
         if transitions is not None:
             self.transitions = transitions
+        else:
+            self.transitions = []
         pass
 
     def do_transition(self, context):
@@ -127,7 +129,7 @@ class Predicate:
         return Predicate(new_lambda)
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
     # todo move this to a unit test
     # hello = 'Hallo'
     # one = 1
@@ -154,21 +156,3 @@ if __name__ == '__main__':
     #
     # false_and_predicate = false_number_predicate._and(false_number_predicate)
     # print(false_and_predicate.test())
-
-    # todo move this to a unit test
-
-    start_state = State('start')
-    end_state = State('end')
-
-    predicate = Predicate(lambda: True)
-    transition = Transition(predicate, end_state)
-    start_state.add_transition(transition)
-
-    demo_context = Context()
-    demo_context.set_current_state(start_state)
-    print('state: ' + demo_context.get_current_state().name)
-    print('do: [Start] --(A)--> [End]; with A: x -> ' + str(predicate.test()))
-    start_state.do_transition(demo_context)
-
-    print("previous state: " + demo_context.get_previous_state().name);
-    print("current state: " + demo_context.get_current_state().name);
