@@ -1,4 +1,4 @@
-from typing import List, Callable
+from typing import List, Callable, Tuple
 
 
 class Context:
@@ -18,11 +18,11 @@ class Context:
 
     def get_previous_state(self):
         # type: () -> State
-        return self.current_state
+        return self.previous_state
 
     def set_previous_state(self, state):
         # type: (State) -> None
-        self.current_state = state
+        self.previous_state = state
         pass
 
 
@@ -32,14 +32,28 @@ class State:
     name = None  # type: str
     transitions = []  # type: List[Transition]
 
-    def __init__(self, name, transitions):
+    def __init__(self, name, transitions=None):
         # type: (str, List[Transition]) -> None
         self.name = name
-        self.transitions = transitions
+        if transitions is not None:
+            self.transitions = transitions
         pass
 
     def do_transition(self, context):
-        # todo implement this method
+        # type: (Context) -> None
+        if context.get_current_state() is not None:
+            context.set_previous_state(context.get_current_state())
+
+        # set this state as new state
+        context.set_current_state(self)
+
+        # transitions = filter(lambda t: t.is_fulfilled(), self.get_transitions())
+        transition = next((t for t in self.get_transitions() if t.is_fulfilled()), None) # type: Transition
+
+        if transition is not None:
+            # update state
+            context.set_current_state(transition.get_successor())
+            # todo perform reflex if possible
         pass
 
     def add_transition(self, transition):
@@ -66,14 +80,18 @@ class State:
 class Transition:
     """Represent a Transition from one state to a predecessor"""
 
-    predicate = None # type: Callable
+    predicate = None # type: Predicate
     reflex_func = None # type: Callable
     successor = None  # type: State
 
-    def __init__(self, predicate, reflex_func, successor):
-        # type: (Predicate, Callable, State) -> None
-        self.predicate_lambda = predicate
+    def __init__(self, predicate, successor, reflex_func=None, reflex_func_args=None):
+        # type: (Predicate, State, Callable, Tuple) -> None
+        self.predicate = predicate
+        self.successor = successor
         pass
+
+    def is_fulfilled(self):
+        return self.predicate.test()
 
     def get_successor(self):
         # type: () -> State
@@ -110,28 +128,44 @@ class Predicate:
 
 
 if __name__ == '__main__':
-    hello = 'Hallo'
-    one = 1
-    bello = 'Bello'
-    zero = 0
+    # hello = 'Hallo'
+    # one = 1
+    # bello = 'Bello'
+    # zero = 0
+    #
+    # startWithH = lambda text: text.startswith('H')
+    # greaterZero = lambda number: number > 0
+    #
+    # true_text_predicate = Predicate(lambda: startWithH(hello))
+    # print(true_text_predicate.test())
+    #
+    # true_number_predicate = Predicate(lambda: greaterZero(one))
+    # print(true_number_predicate.test())
+    #
+    # true_and_predicate = true_number_predicate._and(true_text_predicate)
+    # print(true_and_predicate.test())
+    #
+    # false_text_predicate = Predicate(lambda: startWithH(bello))
+    # print(false_text_predicate.test())
+    #
+    # false_number_predicate = Predicate(lambda: greaterZero(zero))
+    # print(false_number_predicate.test())
+    #
+    # false_and_predicate = false_number_predicate._and(false_number_predicate)
+    # print(false_and_predicate.test())
 
-    startWithH = lambda text: text.startswith('H')
-    greaterZero = lambda number: number > 0
+    start_state = State('start')
+    end_state = State('end')
 
-    true_text_predicate = Predicate(lambda: startWithH(hello))
-    print(true_text_predicate.test())
+    predicate = Predicate(lambda: True)
+    transition = Transition(predicate, end_state)
+    start_state.add_transition(transition)
 
-    true_number_predicate = Predicate(lambda: greaterZero(one))
-    print(true_number_predicate.test())
+    demo_context = Context()
+    demo_context.set_current_state(start_state)
+    print('state: ' + demo_context.get_current_state().name)
+    print('do: [Start] --(A)--> [End]; with A: x -> ' + str(predicate.test()))
+    start_state.do_transition(demo_context)
 
-    true_and_predicate = true_number_predicate._and(true_text_predicate)
-    print(true_and_predicate.test())
-
-    false_text_predicate = Predicate(lambda: startWithH(bello))
-    print(false_text_predicate.test())
-
-    false_number_predicate = Predicate(lambda: greaterZero(zero))
-    print(false_number_predicate.test())
-
-    false_and_predicate = false_number_predicate._and(false_number_predicate)
-    print(false_and_predicate.test())
+    print("previous state: " + demo_context.get_previous_state().name);
+    print("current state: " + demo_context.get_current_state().name);
