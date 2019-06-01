@@ -127,32 +127,3 @@ class Predicate:
         # type (Predicate) -> Predicate
         new_lambda = lambda: self.a_lambda() or predicate.a_lambda()
         return Predicate(new_lambda)
-
-
-# if __name__ == '__main__':
-    # todo move this to a unit test
-    # hello = 'Hallo'
-    # one = 1
-    # bello = 'Bello'
-    # zero = 0
-    #
-    # startWithH = lambda text: text.startswith('H')
-    # greaterZero = lambda number: number > 0
-    #
-    # true_text_predicate = Predicate(lambda: startWithH(hello))
-    # print(true_text_predicate.test())
-    #
-    # true_number_predicate = Predicate(lambda: greaterZero(one))
-    # print(true_number_predicate.test())
-    #
-    # true_and_predicate = true_number_predicate._and(true_text_predicate)
-    # print(true_and_predicate.test())
-    #
-    # false_text_predicate = Predicate(lambda: startWithH(bello))
-    # print(false_text_predicate.test())
-    #
-    # false_number_predicate = Predicate(lambda: greaterZero(zero))
-    # print(false_number_predicate.test())
-    #
-    # false_and_predicate = false_number_predicate._and(false_number_predicate)
-    # print(false_and_predicate.test())
