@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1769f99-bdae-47d1-93cf-f1dd92684d91" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/state/state.py" beforeDir="false" afterPath="$PROJECT_DIR$/state/state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +22,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/test.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="510">
-                  <caret line="87" column="75" selection-start-line="87" selection-start-column="75" selection-end-line="87" selection-end-column="75" />
+                <state relative-caret-position="445">
+                  <caret line="169" column="38" selection-start-line="169" selection-start-column="38" selection-end-line="169" selection-end-column="38" />
                   <folding>
                     <element signature="e#0#15#0" expanded="true" />
                   </folding>
@@ -34,12 +34,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/state/state.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1343">
-                  <caret line="158" selection-start-line="158" selection-end-line="158" />
+                <state relative-caret-position="408">
+                  <caret line="125" column="8" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="8" />
                 </state>
               </provider>
             </entry>
@@ -143,7 +143,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test.TestContext" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test.TestPredicate" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="pystates" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -154,11 +154,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.TestContext&quot;" />
+      <option name="_new_target" value="&quot;test.TestPredicate&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test.TestContext.test_3" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test.TestPredicate.test_1" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="pystates" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -169,11 +169,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.TestContext.test_3&quot;" />
+      <option name="_new_target" value="&quot;test.TestPredicate.test_1&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test.test.TestState" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test.TestPredicate.test_2" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="pystates" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -184,11 +184,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.test.TestState&quot;" />
+      <option name="_new_target" value="&quot;test.TestPredicate.test_2&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test.test.TestState.test_5" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test.TestTransition" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="pystates" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -199,7 +199,22 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.test.TestState.test_5&quot;" />
+      <option name="_new_target" value="&quot;test.TestTransition&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test.TestTransition.test_2" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="pystates" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test.TestTransition.test_2&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -220,10 +235,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for test.TestContext.test_3" />
-        <item itemvalue="Python tests.Unittests for test.TestContext" />
-        <item itemvalue="Python tests.Unittests for test.test.TestState" />
-        <item itemvalue="Python tests.Unittests for test.test.TestState.test_5" />
+        <item itemvalue="Python tests.Unittests for test.TestPredicate" />
+        <item itemvalue="Python tests.Unittests for test.TestPredicate.test_2" />
+        <item itemvalue="Python tests.Unittests for test.TestPredicate.test_1" />
+        <item itemvalue="Python tests.Unittests for test.TestTransition" />
+        <item itemvalue="Python tests.Unittests for test.TestTransition.test_2" />
       </list>
     </recent_temporary>
   </component>
@@ -240,6 +256,8 @@
       <workItem from="1554312699402" duration="2370000" />
       <workItem from="1554315135081" duration="1023000" />
       <workItem from="1559297078393" duration="17923000" />
+      <workItem from="1559389460776" duration="33000" />
+      <workItem from="1559389727247" duration="2987000" />
     </task>
     <task id="LOCAL-00001" summary="add initial python project">
       <created>1554314144720</created>
@@ -301,39 +319,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_test_TestContext - 2019.05.31 at 22h 45m 12s.xml">
-      <configuration name="Unittests for test.TestContext" configurationId="tests" />
+    <history-entry file="Unittests_for_test_TestPredicate_test_1 - 2019.06.01 at 14h 37m 11s.xml">
+      <configuration name="Unittests for test.TestPredicate.test_1" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_py - 2019.05.31 at 22h 45m 30s.xml">
-      <configuration name="Unittests in test.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_TestPredicate_test_1 - 2019.06.01 at 14h 38m 43s.xml">
+      <configuration name="Unittests for test.TestPredicate.test_1" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_TestContext_test_3 - 2019.05.31 at 22h 48m 59s.xml">
-      <configuration name="Unittests for test.TestContext.test_3" configurationId="tests" />
+    <history-entry file="Unittests_for_test_TestPredicate_test_2 - 2019.06.01 at 14h 38m 48s.xml">
+      <configuration name="Unittests for test.TestPredicate.test_2" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_TestContext_test_3 - 2019.05.31 at 22h 49m 15s.xml">
-      <configuration name="Unittests for test.TestContext.test_3" configurationId="tests" />
+    <history-entry file="Unittests_for_test_TestPredicate_test_1 - 2019.06.01 at 14h 39m 42s.xml">
+      <configuration name="Unittests for test.TestPredicate.test_1" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_TestContext_test_3 - 2019.05.31 at 22h 51m 08s.xml">
-      <configuration name="Unittests for test.TestContext.test_3" configurationId="tests" />
+    <history-entry file="Unittests_for_test_TestPredicate_test_1 - 2019.06.01 at 14h 40m 11s.xml">
+      <configuration name="Unittests for test.TestPredicate.test_1" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_TestContext_test_3 - 2019.05.31 at 22h 51m 24s.xml">
-      <configuration name="Unittests for test.TestContext.test_3" configurationId="tests" />
+    <history-entry file="Unittests_for_test_TestPredicate_test_1 - 2019.06.01 at 14h 41m 30s.xml">
+      <configuration name="Unittests for test.TestPredicate.test_1" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_TestContext_test_3 - 2019.05.31 at 22h 51m 48s.xml">
-      <configuration name="Unittests for test.TestContext.test_3" configurationId="tests" />
+    <history-entry file="Unittests_for_test_TestPredicate_test_1 - 2019.06.01 at 14h 41m 51s.xml">
+      <configuration name="Unittests for test.TestPredicate.test_1" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_TestContext_test_3 - 2019.05.31 at 22h 51m 54s.xml">
-      <configuration name="Unittests for test.TestContext.test_3" configurationId="tests" />
+    <history-entry file="Unittests_for_test_TestPredicate_test_2 - 2019.06.01 at 14h 42m 11s.xml">
+      <configuration name="Unittests for test.TestPredicate.test_2" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_py - 2019.05.31 at 22h 52m 06s.xml">
-      <configuration name="Unittests in test.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_TestPredicate_test_2 - 2019.06.01 at 14h 42m 39s.xml">
+      <configuration name="Unittests for test.TestPredicate.test_2" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_py - 2019.05.31 at 22h 54m 13s.xml">
-      <configuration name="Unittests in test.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_TestPredicate - 2019.06.01 at 14h 42m 44s.xml">
+      <configuration name="Unittests for test.TestPredicate" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21316000" />
+    <option name="totallyTimeSpent" value="24336000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -353,7 +371,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32900432" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.32583067" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.32583067" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39871383" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -363,13 +381,13 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.32583067" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32900432" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32900432" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32995737" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3279743" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Coverage" order="5" side_tool="true" weight="0.32995737" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,14 +432,21 @@
     <SUITE FILE_PATH="coverage/pystates$Unittests_in_test_context_py.coverage" NAME="Unittests in test.py Coverage Results" MODIFIED="1559336150060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/pystates$Unittests_for_test_context_Test_WhenCurrentStateIsSet_ThenGetCurrentStateIsLikeExpected_test.coverage" NAME="Unittests for test_context.Test_WhenCurrentStateIsSet_ThenGetCurrentStateIsLikeExpected.test Coverage Results" MODIFIED="1559328428854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/pystates$Unittests_for_test_context_TestState_test_1.coverage" NAME="Unittests for test_context.TestState.test_1 Coverage Results" MODIFIED="1559331660877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/pystates$Unittests_for_test_TestTransition_test_2.coverage" NAME="Unittests for test.TestTransition.test_2 Coverage Results" MODIFIED="1559390310493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/pystates$Unittests_for_test_context_TestState_test_3.coverage" NAME="Unittests for test_context.TestState.test_3 Coverage Results" MODIFIED="1559331429855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/pystates$Unittests_for_test_TestContext_test_3.coverage" NAME="Unittests for test.TestContext.test_3 Coverage Results" MODIFIED="1559335914628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/pystates$Unittests_for_test_TestTransition_test_1.coverage" NAME="Unittests for test.TestTransition.test_1 Coverage Results" MODIFIED="1559390094129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/pystates$Unittests_for_test_TestPredicate.coverage" NAME="Unittests for test.TestPredicate Coverage Results" MODIFIED="1559392999010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/pystates$state.coverage" NAME="state Coverage Results" MODIFIED="1559307904345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/state" />
+    <SUITE FILE_PATH="coverage/pystates$Unittests_in_test_py.coverage" NAME="Unittests in test.py Coverage Results" MODIFIED="1559393017667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/pystates$Unittests_for_test_TestPredicate_test_2.coverage" NAME="Unittests for test.TestPredicate.test_2 Coverage Results" MODIFIED="1559392959282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/pystates$Unittests_for_test_context_TestContext.coverage" NAME="Unittests for test_context.TestContext Coverage Results" MODIFIED="1559331597196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/pystates$Unittests_for_test_TestTransition.coverage" NAME="Unittests for test.TestTransition Coverage Results" MODIFIED="1559390315870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/pystates$Unittests_for_test_context_Test_Context.coverage" NAME="Unittests for test_context.Test_Context Coverage Results" MODIFIED="1559328729168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/pystates$Unittests_for_test_context_Test_State.coverage" NAME="Unittests for test_context.Test_State Coverage Results" MODIFIED="1559329022655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/pystates$Unittests_for_test_context_TestState_test_2.coverage" NAME="Unittests for test_context.TestState.test_2 Coverage Results" MODIFIED="1559331309798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/pystates$Unittests_for_test_context_TestState_test_5.coverage" NAME="Unittests for test_context.TestState.test_5 Coverage Results" MODIFIED="1559332015417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/pystates$Unittests_for_test_TestPredicate_test_1.coverage" NAME="Unittests for test.TestPredicate.test_1 Coverage Results" MODIFIED="1559392910807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/pystates$Unittests_for_test_context_Test_State_test_2.coverage" NAME="Unittests for test_context.Test_State.test_2 Coverage Results" MODIFIED="1559329421253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/pystates$Unittests_for_test_TestContext.coverage" NAME="Unittests for test.TestContext Coverage Results" MODIFIED="1559335512030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/pystates$Unittests_for_test_context_TestState.coverage" NAME="Unittests for test_context.TestState Coverage Results" MODIFIED="1559332026342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
@@ -516,15 +541,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/state/state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1343">
-          <caret line="158" selection-start-line="158" selection-end-line="158" />
+        <state relative-caret-position="408">
+          <caret line="125" column="8" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="87" column="75" selection-start-line="87" selection-start-column="75" selection-end-line="87" selection-end-column="75" />
+        <state relative-caret-position="445">
+          <caret line="169" column="38" selection-start-line="169" selection-start-column="38" selection-end-line="169" selection-end-column="38" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

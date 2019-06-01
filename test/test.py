@@ -88,15 +88,84 @@ class TestState(unittest.TestCase):
         self.assertEquals(self.transition.get_successor(), self.start_state)
 
 
-# class Test_WhenCurrentStateIsSet_ThenGetCurrentStateIsLikeExpected(unittest.TestCase):
-#
-#     context = None
-#     start_state = None
-#
-#     def setUp(self):
-#         self.context = Context()
-#         self.start_state = State('start')
-#
-#     def test(self):
-#         self.context.set_current_state(self.start_state)
-#         self.assertEquals(self.start_state, self.context.get_current_state(), 'current state is unequals start state')
+class TestTransition(unittest.TestCase):
+
+    transition1 = None  # type: Transition
+    transition2 = None  # type: Transition
+    end_state = None  # type: State
+
+    def setUp(self):
+        self.end_state = State('end')
+        self.transition1 = Transition(Predicate(lambda: True), successor=self.end_state)
+        self.transition2 = Transition(Predicate(lambda: False), successor=self.end_state)
+
+    def tearDown(self):
+        self.transition1 = None
+        self.end_state = None
+
+    def test_1(self):
+        self.assertIsNotNone(self.transition1.get_successor())
+        self.assertIs(self.transition1.get_successor(), self.end_state)
+
+    def test_2(self):
+        self.assertTrue(self.transition1.is_fulfilled())
+        self.assertFalse(self.transition2.is_fulfilled())
+
+
+class TestPredicate(unittest.TestCase):
+
+    true_text_predicate = None  # type: Predicate
+    true_number_predicate = None  # type: Predicate
+    true_and_predicate = None  # type: Predicate
+    true_or_predicate = None  # type: Predicate
+    false_text_predicate = None  # type: Predicate
+    false_number_predicate = None  # type: Predicate
+    false_and_predicate = None  # type: Predicate
+    false_or_predicate = None  # type: Predicate
+
+    def setUp(self):
+        hello = 'Hallo'
+        one = 1
+        bello = 'Bello'
+        zero = 0
+        startWithH = lambda text: text.startswith('H')
+        greaterZero = lambda number: number > 0
+        self.true_text_predicate = Predicate(lambda: startWithH(hello))
+        self.true_number_predicate = Predicate(lambda: greaterZero(one))
+        self.true_and_predicate = self.true_number_predicate._and(self.true_text_predicate)
+        self.false_text_predicate = Predicate(lambda: startWithH(bello))
+        self.false_number_predicate = Predicate(lambda: greaterZero(zero))
+        self.false_and_predicate = self.false_number_predicate._and(self.false_number_predicate)
+        self.true_or_predicate = self.true_number_predicate._or(self.false_text_predicate)
+        self.false_or_predicate = self.false_number_predicate._or(self.false_text_predicate)
+
+    def tearDown(self):
+        self.true_text_predicate = None
+        self.true_number_predicate = None
+        self.true_and_predicate = None
+        self.true_or_predicate = None
+        self.false_text_predicate = None
+        self.false_number_predicate = None
+        self.false_and_predicate = None
+        self.false_or_predicate = None
+
+    def test_1(self):
+        self.assertIsNotNone(self.true_text_predicate.a_lambda)
+        self.assertIsNotNone(self.true_number_predicate.a_lambda)
+        self.assertIsNotNone(self.true_and_predicate.a_lambda)
+        self.assertIsNotNone(self.true_or_predicate.a_lambda)
+        self.assertIsNotNone(self.false_text_predicate.a_lambda)
+        self.assertIsNotNone(self.false_number_predicate.a_lambda)
+        self.assertIsNotNone(self.false_and_predicate.a_lambda)
+        self.assertIsNotNone(self.false_or_predicate.a_lambda)
+
+    def test_2(self):
+        self.assertTrue(self.true_text_predicate.test())
+        self.assertTrue(self.true_number_predicate.test())
+        self.assertTrue(self.true_and_predicate.test())
+        self.assertTrue(self.true_or_predicate.test())
+        self.assertFalse(self.false_text_predicate.test())
+        self.assertFalse(self.false_number_predicate.test())
+        self.assertFalse(self.false_and_predicate.test())
+        self.assertFalse(self.false_or_predicate.test())
+
