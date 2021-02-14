@@ -1,3 +1,5 @@
+import sys
+import traceback
 from typing import (
     List,
     Callable,
@@ -42,7 +44,20 @@ class State:
         pass
 
     def do_transition(self, context):
-        # todo implement this method
+        if context.get_current_state() is not None:
+            context.set_previous_state(context.get_current_state())
+            pass
+
+        context.set_current_state(self)
+        active_transition = [t for t in self.transitions if t.is_fulfilled()][0]  # type Optional[Transition]
+
+        if active_transition is not None:
+            context.set_current_state(active_transition.get_successor())
+            try:
+                active_transition.reflex_func()
+            except:
+                traceback.print_exception(*sys.exc_info())
+
         pass
 
     def add_transition(self, transition):
@@ -71,10 +86,15 @@ class Transition:
 
     def __init__(self, predicate, reflex_func, successor):
         # type: (Predicate, Optional[Callable], State) -> None
-        self.predicate_lambda = predicate
+        assert isinstance(reflex_func, Callable)
+        self.predicate = predicate
         self.reflex_func = reflex_func  # type: Optional[Callable]
         self.successor = successor  # type: State
         pass
+
+    def is_fulfilled(self):
+        # type: () -> bool
+        return self.predicate.test()
 
     def get_successor(self):
         # type: () -> State
@@ -112,31 +132,3 @@ class Predicate:
         # type (Predicate) -> Predicate
         new_lambda = lambda: self.a_lambda() or predicate.a_lambda()
         return Predicate(new_lambda)
-
-
-if __name__ == '__main__':
-    hello = 'Hallo'
-    one = 1
-    bello = 'Bello'
-    zero = 0
-
-    startWithH = lambda text: text.startswith('H')
-    greaterZero = lambda number: number > 0
-
-    true_text_predicate = Predicate(lambda: startWithH(hello))
-    print(true_text_predicate.test())
-
-    true_number_predicate = Predicate(lambda: greaterZero(one))
-    print(true_number_predicate.test())
-
-    true_and_predicate = true_number_predicate._and(true_text_predicate)
-    print(true_and_predicate.test())
-
-    false_text_predicate = Predicate(lambda: startWithH(bello))
-    print(false_text_predicate.test())
-
-    false_number_predicate = Predicate(lambda: greaterZero(zero))
-    print(false_number_predicate.test())
-
-    false_and_predicate = false_number_predicate._and(false_number_predicate)
-    print(false_and_predicate.test())
