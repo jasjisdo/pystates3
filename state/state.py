@@ -1,11 +1,17 @@
-from typing import List, Callable
+from typing import (
+    List,
+    Callable,
+    Optional
+)
 
 
 class Context:
     """Represents the current state context"""
 
-    current_state = None  # type: State
-    previous_state = None  # type: State
+    def __init__(self):
+        self.current_state = None  # type: Optional[State]
+        self.previous_state = None  # type: Optional[State]
+        pass
 
     def get_current_state(self):
         # type: () -> State
@@ -71,7 +77,7 @@ class Transition:
     successor = None  # type: State
 
     def __init__(self, predicate, reflex_func, successor):
-        # type: (Predicate, Callable, State) -> None
+        # type: (Predicate, Optional[Callable], State) -> None
         self.predicate_lambda = predicate
         pass
 
