@@ -24,24 +24,21 @@ class Context:
 
     def get_previous_state(self):
         # type: () -> State
-        return self.current_state
+        return self.previous_state
 
     def set_previous_state(self, state):
         # type: (State) -> None
-        self.current_state = state
+        self.previous_state = state
         pass
 
 
 class State:
     """Represents a State"""
 
-    name = None  # type: str
-    transitions = []  # type: List[Transition]
-
-    def __init__(self, name, transitions):
+    def __init__(self, name, *args):
         # type: (str, List[Transition]) -> None
-        self.name = name
-        self.transitions = transitions
+        self.name = name  # type: str
+        self.transitions = args  # type: List[Transition]
         pass
 
     def do_transition(self, context):
@@ -70,15 +67,13 @@ class State:
 
 
 class Transition:
-    """Represent a Transition from one state to a predecessor"""
-
-    predicate = None # type: Callable
-    reflex_func = None # type: Callable
-    successor = None  # type: State
+    """Represent a Transition from one state to a predecessor state"""
 
     def __init__(self, predicate, reflex_func, successor):
         # type: (Predicate, Optional[Callable], State) -> None
         self.predicate_lambda = predicate
+        self.reflex_func = reflex_func  # type: Optional[Callable]
+        self.successor = successor  # type: State
         pass
 
     def get_successor(self):
@@ -93,16 +88,20 @@ class Transition:
 
 class Predicate:
     """Represent a predicate lambda () -> bool"""
-    a_lambda = None  # type Callable
 
     def __init__(self, a_lambda ):
         # type: (Callable) -> None
-        self.a_lambda = a_lambda
+        self.a_lambda = a_lambda  # type Callable
         pass
 
     def test(self):
         # type () -> bool
         return self.a_lambda()
+
+    def _neg(self):
+        # type () -> Predicate
+        new_lambda = lambda: not self.test()
+        return Predicate(new_lambda)
 
     def _and(self, predicate):
         # type (Predicate) -> Predicate
