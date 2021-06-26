@@ -15,6 +15,22 @@ class StateTestCase(unittest.TestCase):
         self.assertEqual(state.get_name(), "TestState")
         pass
 
+    def test_given_states_with_transitions_when_init_then_transitions_are_correct(self):
+        end_state = State("EndState")
+        transition1 = Transition(
+            Predicate(lambda: True),
+            lambda: print("Hello Reflex"),
+            end_state
+        )
+        transition2 = Transition(
+            Predicate(lambda: False),
+            lambda: print("Hello NOP"),
+            end_state
+        )
+        state: State = State("TestState", transition1, transition2)
+        self.assertListEqual(state.transitions, [transition1, transition2])
+        pass
+
     def test_given_transition_from_start_to_end_when_state_transition_then_end_state(self):
         end_state = State("EndState")
         transition = Transition(
