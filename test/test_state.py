@@ -10,12 +10,12 @@ from state import (
 
 class StateTestCase(unittest.TestCase):
 
-    def test_state_init(self):
+    def test_given_state_when_init_then_state_name_is_correct(self):
         state = State("TestState")
         self.assertEqual(state.get_name(), "TestState")
         pass
 
-    def test_state_transition(self):
+    def test_given_transition_from_start_to_end_when_state_transition_then_end_state(self):
         end_state = State("EndState")
         transition = Transition(
             Predicate(lambda: True),
