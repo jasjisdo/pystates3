@@ -77,24 +77,23 @@ class State:
 class Transition:
     """Represent a Transition from one state to a predecessor state"""
 
-    def __init__(self, predicate, reflex_func, successor):
-        # type: (Predicate, Optional[Callable], State) -> None
+    def __init__(self,
+                 predicate: Predicate,
+                 reflex_func: Optional[Callable],
+                 successor: State) -> None:
         assert isinstance(reflex_func, Callable)
-        self.predicate = predicate
-        self.reflex_func = reflex_func  # type: Optional[Callable]
-        self.successor = successor  # type: State
+        self.predicate: Predicate = predicate
+        self.reflex_func: Optional[Callable] = reflex_func
+        self.successor: State = successor
         pass
 
-    def is_fulfilled(self):
-        # type: () -> bool
+    def is_fulfilled(self) -> bool:
         return self.predicate.test()
 
-    def get_successor(self):
-        # type: () -> State
+    def get_successor(self) -> State:
         return self.successor
 
-    def set_successor(self, state):
-        # type: (State) -> None
+    def set_successor(self, state: State) -> None:
         self.successor = state
         pass
 
