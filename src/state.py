@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import sys
 import traceback
 from typing import (
@@ -11,25 +13,21 @@ class Context:
     """Represents the current state context"""
 
     def __init__(self):
-        self.current_state = None  # type: Optional[State]
-        self.previous_state = None  # type: Optional[State]
+        self.current_state: Optional[State] = None
+        self.previous_state: Optional[State] = None
         pass
 
-    def get_current_state(self):
-        # type: () -> State
+    def get_current_state(self) -> State:
         return self.current_state
 
-    def set_current_state(self, state):
-        # type: (State) -> None
+    def set_current_state(self, state: State) -> None:
         self.current_state = state
         pass
 
-    def get_previous_state(self):
-        # type: () -> State
+    def get_previous_state(self) -> State:
         return self.previous_state
 
-    def set_previous_state(self, state):
-        # type: (State) -> None
+    def set_previous_state(self, state: State) -> None:
         self.previous_state = state
         pass
 
