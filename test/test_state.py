@@ -1,6 +1,6 @@
 import unittest
 
-from state import (
+from state.state import (
     State,
     Predicate,
     Transition,
