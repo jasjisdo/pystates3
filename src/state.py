@@ -46,7 +46,7 @@ class State:
             pass
 
         context.set_current_state(self)
-        active_transition = [t for t in self.transitions if t.is_fulfilled()][0]  # type Optional[Transition]
+        active_transition = [t for t in self.transitions if t.is_fulfilled()][0]
 
         if active_transition is not None:
             context.set_current_state(active_transition.get_successor())
