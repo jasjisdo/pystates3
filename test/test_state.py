@@ -46,6 +46,42 @@ class StateTestCase(unittest.TestCase):
         self.assertEqual(context.get_previous_state(), start_state)
         pass
 
+    def test_given_when_then_1(self):
+        predicates = [Predicate(lambda: True),
+                      Predicate(lambda: False)]
+        actual = [p._neg().test() for p in predicates]
+        expected = [False, True]
+        self.assertEqual(expected, actual)
+        pass
+
+    def test_given_when_then_2(self):
+        predicates = [(Predicate(lambda: True),
+                      Predicate(lambda: True)),
+                      (Predicate(lambda: True),
+                       Predicate(lambda: False)),
+                      (Predicate(lambda: False),
+                       Predicate(lambda: True)),
+                      (Predicate(lambda: False),
+                       Predicate(lambda: False))]
+        actual = [t[0]._and(t[1]).test() for t in predicates]
+        expected = [True, False, False, False]
+        self.assertEqual(expected, actual)
+        pass
+
+    def test_given_when_then_3(self):
+        predicates = [(Predicate(lambda: True),
+                       Predicate(lambda: True)),
+                      (Predicate(lambda: True),
+                       Predicate(lambda: False)),
+                      (Predicate(lambda: False),
+                       Predicate(lambda: True)),
+                      (Predicate(lambda: False),
+                       Predicate(lambda: False))]
+        actual = [t[0]._or(t[1]).test() for t in predicates]
+        expected = [True, True, True, False]
+        self.assertEqual(expected, actual)
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()
