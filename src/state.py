@@ -101,26 +101,21 @@ class Transition:
 class Predicate:
     """Represent a predicate lambda () -> bool"""
 
-    def __init__(self, a_lambda ):
-        # type: (Callable) -> None
-        self.a_lambda = a_lambda  # type Callable
+    def __init__(self, a_lambda: Callable) -> None:
+        self.a_lambda = a_lambda
         pass
 
-    def test(self):
-        # type () -> bool
+    def test(self) -> bool:
         return self.a_lambda()
 
-    def _neg(self):
-        # type () -> Predicate
-        new_lambda = lambda: not self.test()
+    def _neg(self) -> Predicate:
+        def new_lambda(): return not self.test()
         return Predicate(new_lambda)
 
-    def _and(self, predicate):
-        # type (Predicate) -> Predicate
-        new_lambda = lambda: self.a_lambda() and predicate.a_lambda()
+    def _and(self, predicate: Predicate) -> Predicate:
+        def new_lambda(): return self.a_lambda() and predicate.a_lambda()
         return Predicate(new_lambda)
 
-    def _or(self, predicate):
-        # type (Predicate) -> Predicate
-        new_lambda = lambda: self.a_lambda() or predicate.a_lambda()
+    def _or(self, predicate: Predicate) -> Predicate:
+        def new_lambda(): return self.a_lambda() or predicate.a_lambda()
         return Predicate(new_lambda)
