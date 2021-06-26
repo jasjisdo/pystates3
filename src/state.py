@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import sys
 import traceback
+import logging
+
 from typing import (
     List,
     Callable,
@@ -35,13 +37,12 @@ class Context:
 class State:
     """Represents a State"""
 
-    def __init__(self, name, *args):
-        # type: (str, List[Transition]) -> None
-        self.name = name  # type: str
-        self.transitions = args  # type: List[Transition]
+    def __init__(self, name: str, *args: Transition) -> None:
+        self.name: str = name
+        self.transitions: List[Transition] = list(args)
         pass
 
-    def do_transition(self, context):
+    def do_transition(self, context: Context) -> None:
         if context.get_current_state() is not None:
             context.set_previous_state(context.get_current_state())
             pass
@@ -53,29 +54,25 @@ class State:
             context.set_current_state(active_transition.get_successor())
             try:
                 active_transition.reflex_func()
-            except:
-                traceback.print_exception(*sys.exc_info())
+            except Exception as e:
+                logging.exception(e)
 
         pass
 
-    def add_transition(self, transition):
-        # type: (Transition) -> None
+    def add_transition(self, transition: Transition) -> None:
         """add a transition to transitions of this state"""
         assert isinstance(transition, Transition)
         self.transitions.append(transition)
 
-    def remove_transition(self, transition):
-        # type: (Transition) -> None
+    def remove_transition(self, transition: Transition) -> None:
         """add a transition to transitions of this state"""
         assert isinstance(transition, Transition)
         self.transitions.remove(transition)
 
-    def get_transitions(self):
-        # type: () -> List[Transition]
+    def get_transitions(self) -> List[Transition]:
         return self.transitions
 
-    def get_name(self):
-        # type: () -> str
+    def get_name(self) -> str:
         return self.name
 
 
