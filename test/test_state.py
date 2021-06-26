@@ -46,7 +46,7 @@ class StateTestCase(unittest.TestCase):
         self.assertEqual(context.get_previous_state(), start_state)
         pass
 
-    def test_given_when_then_1(self):
+    def test_given_predicates_when_neg_applied_then_output_values_are_correct(self):
         predicates = [Predicate(lambda: True),
                       Predicate(lambda: False)]
         actual = [p._neg().test() for p in predicates]
@@ -54,7 +54,7 @@ class StateTestCase(unittest.TestCase):
         self.assertEqual(expected, actual)
         pass
 
-    def test_given_when_then_2(self):
+    def test_given_predicates_when_and_applied_then_output_values_are_correct(self):
         predicates = [(Predicate(lambda: True),
                       Predicate(lambda: True)),
                       (Predicate(lambda: True),
@@ -68,7 +68,7 @@ class StateTestCase(unittest.TestCase):
         self.assertEqual(expected, actual)
         pass
 
-    def test_given_when_then_3(self):
+    def test_given_predicates_when_or_applied_then_output_values_are_correct(self):
         predicates = [(Predicate(lambda: True),
                        Predicate(lambda: True)),
                       (Predicate(lambda: True),
