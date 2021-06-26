@@ -1,10 +1,12 @@
 [tool.poetry]
 name = "pystates3"
-version = "0.1.0"
+version = "0.1.3"
 description = "State aware system implemented in python"
 authors = ["Jaschar Domann <jasjisdo@gmail.com>"]
 license = "Apache License 2.0"
 homepage = "https://github.com/jasjisdo/pystates3"
+repository = "https://github.com/jasjisdo/pystates3"
+readme = "README.md"
 
 packages = [
     { include="state", from="./src" },
