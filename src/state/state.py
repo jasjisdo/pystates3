@@ -45,9 +45,9 @@ class State:
             context.set_previous_state(context.get_current_state())
             pass
 
-        context.set_current_state(self)
         active_transition = [t for t in self.transitions if t.is_fulfilled()][0]
 
+        context.set_current_state(self)
         if active_transition is not None:
             context.set_current_state(active_transition.get_successor())
             try:
