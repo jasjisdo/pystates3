@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pystates3"
-version = "0.1.3"
+version = "0.1.4"
 description = "State aware system implemented in python"
 authors = ["Jaschar Domann <jasjisdo@gmail.com>"]
 license = "Apache License 2.0"
