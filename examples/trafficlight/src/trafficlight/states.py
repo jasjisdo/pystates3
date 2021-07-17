@@ -1,7 +1,5 @@
 from state import State, Transition
 
-EXECS = 9
-
 
 class StateRed(State):
 

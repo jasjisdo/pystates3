@@ -1,11 +1,9 @@
 import time
-import states
 import schedule
+import constants
 
 from states import StateRed, StateYellow, StateGreen
-from state import Context, Transition, Predicate
-
-CONTEXT = Context()
+from state import Transition, Predicate
 
 
 def init_traffic_light():
@@ -13,23 +11,23 @@ def init_traffic_light():
     state_yellow = StateYellow()
     state_green = StateGreen()
 
-    CONTEXT.set_current_state(state_red)
+    constants.CONTEXT.set_current_state(state_red)
 
     red_to_green = Transition(
         predicate=Predicate(
-            lambda: CONTEXT.get_current_state().get_name() == StateRed.name),
+            lambda: constants.CONTEXT.get_current_state().get_name() == StateRed.name),
         reflex_func=lambda: print("switch from red to green light"),
         successor=state_green
     )
     green_to_yellow = Transition(
         predicate=Predicate(
-            lambda: CONTEXT.get_current_state().get_name() == StateGreen.name),
+            lambda: constants.CONTEXT.get_current_state().get_name() == StateGreen.name),
         reflex_func=lambda: print("switch from green to yellow light"),
         successor=state_yellow
     )
     yellow_to_red = Transition(
         predicate=Predicate(
-            lambda: CONTEXT.get_current_state().get_name() == StateYellow.name),
+            lambda: constants.CONTEXT.get_current_state().get_name() == StateYellow.name),
         reflex_func=lambda: print("switch from yellow to red light"),
         successor=state_red
     )
@@ -42,10 +40,10 @@ def init_traffic_light():
 
 
 def switch_lights():
-    if states.EXECS <= 0:
+    if constants.EXECS <= 0:
         return schedule.CancelJob
-    CONTEXT.get_current_state().do_transition(CONTEXT)
-    states.EXECS -= 1
+    constants.CONTEXT.get_current_state().do_transition(constants.CONTEXT)
+    constants.EXECS -= 1
     pass
 
 
@@ -53,6 +51,6 @@ if __name__ == '__main__':
     init_traffic_light()
     schedule.every(3).seconds.do(switch_lights)
 
-    while states.EXECS > 0:
+    while constants.EXECS > 0:
         schedule.run_pending()
         time.sleep(1)
